@@ -15,6 +15,11 @@ class Meal extends Model
 
     public $translatedAttributes = ['title', 'description'];
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
     public function ingredients()
     {
         return $this->belongsToMany(Ingredient::class, 'meal_ingredient');
